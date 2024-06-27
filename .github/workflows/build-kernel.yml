@@ -339,16 +339,16 @@ jobs:
     - name: Release
       uses: softprops/action-gh-release@v2.0.5
       with:
-          tag_name: ${{ env.KERNELSU_TAG }}
+          tag_name: ${{ env.TAG_NAME }}
           body: |
             Device:
             ${{ env.DEVICE }}
 
             Kernel:
-            https://github.com/PixelOS-Devices/kernel_xiaomi_sm6150
+            ${{ env.KERNEL_SOURCE }}
 
             AnyKernel3:
-            https://github.com/itsshashanksp/AnyKernel3
+            ${{ env.CUSTOM_ANYKERNEL3_SOURCE }}
 
             KernelSU:
             https://github.com/tiann/KernelSU/releases/tag/${{ env.KERNELSU_TAG }}
